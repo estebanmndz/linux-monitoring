@@ -1,11 +1,17 @@
-README.md:
+# ✅ **3. linux-monitoring — README.md**
 
 ```md
-# Monitorización Básica del Servidor en Bash
+# 📊 Linux Basic Monitoring
 
-Muestra CPU, RAM y disco en un solo comando.
+Script sencillo para obtener métricas básicas del sistema en tiempo real.
 
-## Uso
+## ✅ Mide:
+
+- Uso de CPU
+- Uso de RAM
+- Uso de Disco
+
+## ▶️ Uso
 
 ```bash
 chmod +x monitor.sh
