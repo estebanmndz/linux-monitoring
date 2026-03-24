@@ -1,9 +1,7 @@
 #!/bin/bash
 
-sudo apt update -y
-sudo apt install nginx -y
-sudo ufw allow 'Nginx Full'
-sudo systemctl enable nginx
-sudo systemctl start nginx
+CPU=$(top -bn1 | grep "Cpu(s)" | awk '{print $2}')
+RAM=$(free -m | awk '/Mem/ {print $3}')
+DISK=$(df -h / | awk '/\// {print $5}')
 
-echo "<h1>Servidor Nginx configurado automáticamente</h1>" | sudo tee /var/www/html/index.html
+echo "CPU: $CPU% | RAM: ${RAM}MB | DISK: $DISK"
