@@ -1,66 +1,152 @@
-# 📊 Linux Basic Monitoring Script
+# 📊 Linux Monitoring & Alerting Script (Bash)
 
-## 🧠 Descripción
+![Linux](https://img.shields.io/badge/Linux-Monitoring-blue)
+![Bash](https://img.shields.io/badge/Bash-Scripting-black)
+![Observability](https://img.shields.io/badge/Observability-Alerting-green)
 
-Este script en Bash recoge métricas básicas del sistema en tiempo real, simulando un enfoque inicial de monitorización en entornos Linux.
-
-Está orientado a entender y automatizar la observabilidad básica de recursos, un componente clave en entornos DevOps y Cloud.
-
----
-
-## 📊 Métricas recogidas
-
-* Uso de CPU (%)
-* Uso de memoria RAM (MB)
-* Uso de disco (%)
+> 💡 Monitor system health and detect issues using real-time metrics and basic alerting thresholds
 
 ---
 
-## ⚙️ Características técnicas
+## 🧠 Overview
 
-* Script ligero en Bash
-* Logging con timestamp
-* Cálculo de métricas en tiempo real
-* Alertas básicas configurables
-* Sin dependencias externas (salvo herramientas estándar Linux)
+This project provides a Bash script that monitors key system metrics and generates alerts when thresholds are exceeded.
+
+It simulates basic observability and alerting practices used in real-world environments.
+
+**Technologies used:**
+
+* Linux (Ubuntu/Debian)
+* Bash scripting
+* System monitoring tools (`top`, `free`, `df`)
 
 ---
 
-## ▶️ Uso
+## 🎯 Objective
 
-```bash
-chmod +x monitor.sh
+The goal of this project is to:
+
+* Monitor system performance
+* Detect abnormal resource usage
+* Generate alerts based on thresholds
+* Log system metrics for analysis
+
+---
+
+## 📊 Metrics Collected
+
+The script monitors:
+
+* **CPU usage**
+* **Memory usage (RAM)**
+* **Disk usage**
+
+---
+
+## 🚨 Alerting System
+
+The script includes basic alerting:
+
+* CPU usage > 80%
+* RAM usage > defined threshold
+* Disk usage > 80%
+
+Alerts are logged when thresholds are exceeded.
+
+---
+
+## 🏗️ Execution Flow
+
+```id="n7b9rj"
+[Linux Server]
+        ↓
+[Run Script]
+        ↓
+[Collect Metrics]
+        ↓
+[Evaluate Thresholds]
+        ↓
+[Generate Alerts]
+        ↓
+[Log Results]
+```
+
+---
+
+## ⚙️ Key Features
+
+* Real-time system monitoring
+* Threshold-based alerting
+* Persistent logging (`monitor.log`)
+* Lightweight and dependency-free
+* Easy to extend
+
+---
+
+## 🧩 How It Works
+
+The script performs:
+
+1. Collects CPU, RAM, and disk metrics
+2. Logs system status
+3. Evaluates thresholds
+4. Generates alerts if limits are exceeded
+5. Stores all output in a log file
+
+---
+
+## 🔐 Security Considerations
+
+* Read-only monitoring (no system modifications)
+* Safe to run in production environments
+
+---
+
+## 🌍 Real-World Use Case
+
+This script can be used to:
+
+* Monitor server health in small environments
+* Detect performance issues early
+* Provide basic observability without external tools
+* Serve as a foundation for advanced monitoring systems
+
+---
+
+## ▶️ Usage
+
+```bash id="x2j2re"
 ./monitor.sh
 ```
 
 ---
 
-## 📊 Output
+## 📊 Example Output
 
-```
-2026-03-25 12:00:00 - 📊 CPU: 35% | RAM: 1024/4096MB | DISK: 45%
-```
-
-En caso de superar umbrales:
-
-```
+```id="d5rr03"
+📊 CPU: 45% | RAM: 600/2000MB | DISK: 70%
 ⚠️ Alta CPU detectada
-⚠️ Disco casi lleno
 ```
 
 ---
 
-## ⚠️ Consideraciones
+## 🚀 Future Improvements
 
-* Script orientado a entornos Linux
-* Las métricas son aproximadas (no reemplaza herramientas como Prometheus)
-* Los umbrales son configurables en el script
+* Configurable thresholds
+* Email or webhook alerting
+* Integration with Prometheus / Grafana
+* Historical metrics storage
+* Process-level monitoring
 
 ---
 
-## 🚀 Mejoras futuras
+## 📌 Key Takeaways
 
-* Envío de alertas (email/webhook)
-* Integración con Prometheus / Node Exporter
-* Visualización en Grafana
-* Ejecución programada con cron
+This project demonstrates:
+
+* Linux system monitoring
+* Basic alerting mechanisms
+* Observability principles
+* DevOps / SRE mindset
+
+---
